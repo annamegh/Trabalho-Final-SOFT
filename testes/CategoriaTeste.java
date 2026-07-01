@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 import dados.Categoria;
+import dados.Usuario;
 
 class CategoriaTeste {
 
@@ -29,11 +30,13 @@ class CategoriaTeste {
 	@Test
 	public void testeExcluirCategoria() {	
 		
+		Usuario u1 = new Usuario(1L, "Anna", "anna@gmail.com", "abc");
 		Categoria c1 = new Categoria(1L, "Limpeza");
 		
+		u1.getCategorias().add(c1);
 		c1.excluir();
 		
-		fail("Não implementado");
+		assertEquals(0, u1.getCategorias().size(), "Categoria excluida com sucesso");
 	}
 
 }
