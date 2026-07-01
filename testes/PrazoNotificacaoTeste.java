@@ -14,15 +14,17 @@ class PrazoNotificacaoTeste {
 	public void testeCadastrarPrazoNotificacao() {
 		PrazoNotificacao p1 = new PrazoNotificacao(1L, 2, UnidadePrazo.MESES);
 		
-		assertDoesNotThrow(() -> p1.cadastrar());
+		p1.cadastrar();
+		
+		fail("Não implementado");
 	}
 	
 	@Test
 	public void testeCalcularProxNotificacao () {
 		PrazoNotificacao p1 = new PrazoNotificacao(1L, 2, UnidadePrazo.MESES);
-		p1.calcularProxNotificacao();
+		LocalDate d1 = p1.calcularProxNotificacao();
 		
-		assertEquals(LocalDate.of(2026, 12, 31), p1.getDataNotificacao(), "Data da próxima notificação atualizada com sucesso");
+		assertEquals(LocalDate.of(2026, 12, 31), d1, "Data da próxima notificação calculada com sucesso");
 	}
 
 }
