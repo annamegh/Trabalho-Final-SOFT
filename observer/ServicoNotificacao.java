@@ -1,5 +1,6 @@
 package observer;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import dados.Notificacao;
@@ -11,7 +12,7 @@ public class ServicoNotificacao implements ObservadorTarefa{
 	private List<ObservadorTarefa> obervadores;
 	
 	private ServicoNotificacao () {
-		
+		this.obervadores = new ArrayList<>();
 	}
 	
 	public static synchronized ServicoNotificacao getInstance() {
@@ -22,7 +23,7 @@ public class ServicoNotificacao implements ObservadorTarefa{
     }
 
     public void registrar(ObservadorTarefa obs) {
-    	
+    	this.getObervadores().add(obs);
     }
 
     @Override
