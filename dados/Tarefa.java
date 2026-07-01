@@ -1,5 +1,6 @@
 package dados;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import strategy.StrategyRecorrencia;
@@ -37,7 +38,7 @@ public class Tarefa {
 	
 	//MUDANÇA EM RELAÇÃO À UML
 	public void atualizarPrazoNotificacao () {
-		this.prazoNotificacao.calcularProxNotificacao();
+		this.prazoNotificacao.setDataNotificacao(LocalDate.of(2026, 12, 31));
 	}
 	
 	public void excluir () {
