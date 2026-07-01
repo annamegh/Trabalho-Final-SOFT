@@ -6,6 +6,7 @@ import java.time.LocalDate;
 
 import org.junit.jupiter.api.Test;
 
+import dados.Categoria;
 import dados.PrazoNotificacao;
 import dados.Tarefa;
 import dados.UnidadePrazo;
@@ -43,10 +44,14 @@ class TarefaTeste {
 
 	@Test
 	public void testeExcluir () {
+		
+		Categoria c1 = new Categoria(1L, "Limpeza");
 		Tarefa t1 = new Tarefa(1L, "Limpeza");
+		c1.getTarefas().add(t1);
+		
 		t1.excluir();
 		
-		fail("Não implementado");
+		assertEquals(0, c1.getTarefas().size(), "Tarefa excluida com sucesso");
 	}
 	
 }
