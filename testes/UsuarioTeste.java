@@ -13,8 +13,9 @@ class UsuarioTeste {
 	@Test
 	public void testeCadastrarUsuario () {
 		Usuario u1 = new Usuario (1L, "Anna", "anna@gmail.com", "abc");
+		u1.cadastrar();
 		
-		assertDoesNotThrow(() -> u1.cadastrar());
+		fail("Não implementado");
 	}
 	
 	@Test
