@@ -6,15 +6,18 @@ import java.time.LocalDate;
 
 import org.junit.jupiter.api.Test;
 
+import dados.PrazoNotificacao;
 import dados.Tarefa;
+import dados.UnidadePrazo;
 
 class TarefaTeste {
 
 	@Test
 	public void testeCadastrarCTarefa (){
 		Tarefa t1 = new Tarefa(1L, "Limpeza");
+		t1.cadastrar();
 		
-		assertDoesNotThrow(() -> t1.cadastrar());
+		fail("Não implementado");
 	}
 	
 	//MUDANÇA EM RELAÇÃO À UML
@@ -30,7 +33,9 @@ class TarefaTeste {
 	@Test
 	public void testeAtualizarPrazoNotificacao () {
 		Tarefa t1 = new Tarefa(1L, "Limpeza");
+		PrazoNotificacao p1 = new PrazoNotificacao(1L, 2, UnidadePrazo.MESES);
 		
+		t1.setPrazoNotificacao(p1);
 		t1.atualizarPrazoNotificacao();
 		
 		assertEquals(LocalDate.of(2026, 12, 31), t1.getPrazoNotificacao().getDataNotificacao(), "Data da próxima notificação atualizada com sucesso");
@@ -39,8 +44,9 @@ class TarefaTeste {
 	@Test
 	public void testeExcluir () {
 		Tarefa t1 = new Tarefa(1L, "Limpeza");
+		t1.excluir();
 		
-		assertDoesNotThrow(() -> t1.excluir());
+		fail("Não implementado");
 	}
 	
 }
