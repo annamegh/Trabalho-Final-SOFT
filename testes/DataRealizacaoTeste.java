@@ -13,7 +13,9 @@ class DataRealizacaoTeste {
 	void testeCadastrarDataRealizacao() {
 		DataRealizacao d1 = new DataRealizacao(1L, LocalDate.of(2026, 07, 01));
 		
-		assertDoesNotThrow(() -> d1.cadastrar());
+		d1.cadastrar();
+		
+		fail("Não implementado");
 	}
 	
 	@Test
