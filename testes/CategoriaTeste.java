@@ -11,8 +11,10 @@ class CategoriaTeste {
 	public void testeCadastrarCategoria() {
 		
 		Categoria c1 = new Categoria(1L, "Limpeza");
-				
-		assertDoesNotThrow(() -> c1.cadastrar());
+		
+		c1.cadastrar();
+		
+		fail("Não implementado");
 	}
 	
 	@Test
@@ -21,15 +23,17 @@ class CategoriaTeste {
 		Categoria c1 = new Categoria(1L, "Limpeza");
 		c1.atualizar();
 		
-		assertEquals(c1.getNome(), "Saúde", "Nome da Categoria atualizado com sucesso");
+		assertEquals("Saúde", c1.getNome());
 	}
 	
 	@Test
-	public void testeExcluirCategoria() {
+	public void testeExcluirCategoria() {	
 		
-		Categoria c1 = new Categoria(1L, "Limpeza");		
+		Categoria c1 = new Categoria(1L, "Limpeza");
 		
-		assertDoesNotThrow(() -> c1.excluir());	
+		c1.excluir();
+		
+		fail("Não implementado");
 	}
 
 }
